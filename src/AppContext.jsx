@@ -1,6 +1,7 @@
 import { createContext, useContext, useRef } from "react";
 import { useState } from "react"
 import { move } from "./constants";
+import useDarkTheme from "./hooks/useDarkTheme";
 
 
 const AppContext = createContext(null)
@@ -24,6 +25,10 @@ export function AppContextProvider({children}) {
 
     const [isReady, setIsReady] = useState("")
 
+    // Dark Theme custom hook
+    const {isDarkTheme, handleDarkTheme} = useDarkTheme()
+    // End
+    
     const modalRef = useRef()
 
     const gameFunction = () => {
@@ -110,6 +115,8 @@ export function AppContextProvider({children}) {
         setIsWinner,
         playerTimeToMove,
         modalRef,
+        isDarkTheme,
+        handleDarkTheme
     }
 
     return (

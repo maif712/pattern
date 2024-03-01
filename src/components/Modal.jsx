@@ -19,7 +19,7 @@ export default function Modal() {
 
     return (
         <dialog className={`p-10 backdrop-blur-md rounded-md ${isWinner ? " bg-green-600/40" : "bg-red-600/40"} `} ref={modalRef}>
-            <span className="uppercase font-bold tracking-wider text-3xl text-black/80">{isWinner ? "correct" : "wrong"}</span>
+            <span className="uppercase font-bold tracking-wider text-3xl text-black/80 dark:text-white">{isWinner ? "correct" : "wrong"}</span>
         </dialog>
     )
 }
