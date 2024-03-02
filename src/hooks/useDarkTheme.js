@@ -15,6 +15,11 @@ export default function useDarkTheme() {
         localStorage.setItem("THEME", JSON.stringify(isDarkTheme))
     }, [isDarkTheme])
 
+    useEffect(() => {
+        const mainHtml = document.querySelector("html")
+        isDarkTheme ? mainHtml.classList.add("dark") : mainHtml.classList.remove("dark")
+    }, [isDarkTheme])
+
     const handleDarkTheme = () => {
         setIsDarkTheme(prev => !prev)
     }

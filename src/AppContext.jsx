@@ -6,7 +6,7 @@ import useDarkTheme from "./hooks/useDarkTheme";
 
 const AppContext = createContext(null)
 
-export function AppContextProvider({children}) {
+export function AppContextProvider({ children }) {
 
     const [aiMove, setAiMove] = useState("")
     const [mainMove, setMainMove] = useState("")
@@ -26,14 +26,11 @@ export function AppContextProvider({children}) {
     const [isReady, setIsReady] = useState("")
 
     // Dark Theme custom hook
-    const {isDarkTheme, handleDarkTheme} = useDarkTheme()
+    const { isDarkTheme, handleDarkTheme } = useDarkTheme()
     // End
 
-    useEffect(() => {
-        const mainHtml = document.querySelector("html")
-        isDarkTheme ? mainHtml.classList.add("dark") : mainHtml.classList.remove("dark")
-    }, [isDarkTheme])
-    
+
+
     const modalRef = useRef()
 
     const gameFunction = () => {
