@@ -9,7 +9,7 @@
     }
 
     .root {
-        @apply md:h-screen md:flex md:flex-col md:justify-between
+        /* @apply md:h-screen md:flex md:flex-col md:justify-between */
     }
 }
 

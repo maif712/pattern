@@ -15,7 +15,7 @@ export default function App() {
 
 
     return (
-        <div className={`root ${isDarkTheme && "dark"} dark:bg-dark`}>
+        <div className={`root flex flex-col h-screen ${isDarkTheme && "dark"} dark:bg-dark`}>
             <Header />
             <main className="layout-wrapper">
                 <h1 className="text-center my-8 font-bold text-4xl uppercase tracking-wider text-dark bg-[#ffd7de] p-2 rounded-sm shadow-md dark:bg-[#461e25] dark:text-white">copy the pattern</h1>
