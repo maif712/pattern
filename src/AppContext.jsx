@@ -1,4 +1,4 @@
-import { createContext, useContext, useRef } from "react";
+import { createContext, useContext, useEffect, useRef } from "react";
 import { useState } from "react"
 import { move } from "./constants";
 import useDarkTheme from "./hooks/useDarkTheme";
@@ -28,6 +28,11 @@ export function AppContextProvider({children}) {
     // Dark Theme custom hook
     const {isDarkTheme, handleDarkTheme} = useDarkTheme()
     // End
+
+    useEffect(() => {
+        const mainHtml = document.querySelector("html")
+        isDarkTheme ? mainHtml.classList.add("dark") : mainHtml.classList.remove("dark")
+    }, [isDarkTheme])
     
     const modalRef = useRef()
 
